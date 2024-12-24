@@ -409,12 +409,127 @@
 	   h5{
 		   font-size: 12px;
 	   }
+
+	   .card-title{
+		font-size: 2px;
+	   }
    }
 	   
+   .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 10px;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(4px);
+            z-index: 1;
+        }
+
+        .card-body {
+            position: relative;
+            z-index: 2;
+            background-color: rgba(0, 0, 0, 0.664);
+            padding: 15px;
+            border-radius: 10px;
+			color: orange;
+        }
+
+        .card-title {
+            color: rgb(24, 238, 24);
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+		.card-text{
+			font-size: medium;
+			
+		}
+
+        .card-text ol {
+            padding-left: 20px;
+        }
+        .card-text ol li {
+            margin-bottom: 10px;
+        }
+
+        .card-text, h1, ol li {
+            text-transform: capitalize;
+			font-family: 'Montagu Slab', sans-serif;
+        }
+		#B2{
+			padding: 10px 20px;
+            border: none;
+            background-color: rgb(5, 234, 5);
+            color: black;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+		}
+		#B2:hover{
+            box-shadow:0 0 5px rgb(5, 234, 5),
+                        0 0 25px rgb(5, 234, 5),
+                        0 0 50px rgb(5, 234, 5),
+                        0 0 100px rgb(5, 234, 5),
+                        0 0 200px rgb(5, 234, 5);
+    }
+
+
+	/* Style the container for the Google Translate Element */
+	#google_translate_element_container {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            z-index: 9999;
+            transition: box-shadow 0.3s ease; /* Add transition for a smoother effect */
+        }
+
+        /* Style the Google Translate Element */
+        #google_translate_element {
+            border: 1px solid rgba(255, 174, 0); /* Cyan border color */
+            padding: 10px;
+            background-color: #f0f8ff; /* AliceBlue background color */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(255, 174, 0); /* Initial box-shadow */
+        }
+
+        /* Add box-shadow when hovering over the container */
+        #google_translate_element_container:hover {
+            box-shadow: 0 0 5px rgb(255, 174, 0),
+                        0 0 25px rgb(255, 174, 0),
+                        0 0 50px rgb(255, 174, 0);
+        }
    
 </style>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script type="text/javascript">
+	function googleTranslateElementInit() {
+		new google.translate.TranslateElement({ pageLanguage: 'tel', layout: google.translate.TranslateElement.InlineLayout }, 'google_translate_element');
+	}
+  </script>
  </head>
 <body>
+	<div id="google_translate_element_container">
+		<div id="google_translate_element"></div>
+	</div>	
   <HEADER>
   <div >
     <DIV style="color:blue; display:flex; justify-content:center;" >
@@ -491,175 +606,260 @@
      <div id="X">
         <a href="https://mhasiemmalik.github.io/FarmPlusRepoTelangana/">
 		<img id="h" href="file:///D:/ADILABAD+.html" src="AIS PICS/ANDHRA PRADESH.png" width="110%" height="80%" style="border-radius:20px; ">
-		<strong><h5> ANDHRA PRADESH / आंध्र प्रदेश </h5></strong></a>
+		<strong><h5 class="notranslate"> ANDHRA PRADESH /</h5><h5 id="translateThisSection"> आंध्र प्रदेश </h5></strong></a>
      </div>
 	 <div id="X">
         <a href="https://mhasiemmalik.github.io/Arunachalmain/">
 		<img id="h" src="AIS PICS\ARUNACHAL PRADESH.png" width="100%" height="80%" style="border-radius:20px; ">
-		<strong><h5> ARUNACHAL PRADESH / अरुणाचल प्रदेश </h5></strong></a>
+		<strong><h5 class="notranslate"> ARUNACHAL PRADESH /</h5><h5 id="translateThisSection">अरुणाचल प्रदेश </h5></strong></a>
      </div>
 	  <div id="X">
 	   <a href="https://mhasiemmalik.github.io/Assammain/">
 		<img id="h" src="AIS PICS\ASSAM.png" width="100%" height="80%" style="border-radius:20px;">
-		<strong><h5> ASSAM / असम </h5></strong></a>
+		<strong><h5 class="notranslate"> ASSAM /</h5><h5 id="translateThisSection">असम </h5></strong></a>
      </div>
 	  <div id="X">
 	   <a href="https://mhasiemmalik.github.io/Biharmain/">
 		<img id="h"  src="AIS PICS\BIHAR.png" width="100%" height="80%" style="border-radius:20px; ">
-		<strong><h5> BIHAR / बिहार </h5></strong></a>
+		<strong><h5 class="notranslate"> BIHAR /</h5><h5 id="translateThisSection">बिहार </h5></strong></a>
      </div>
 	 <div id="X">
 	   <a href="https://mhasiemmalik.github.io/CHGstatemain/">
 		<img id="h" src="AIS PICS\CHHATTISGARH.png" width="100%" height="80%" style="border-radius:20px; ">
-		<strong><h5> CHHATTISGARH / छत्तीसगढ </h5></strong></a>
+		<strong><h5 class="notranslate"> CHHATTISGARH /</h5><h5 id="translateThisSection">छत्तीसगढ </h5></strong></a>
      </div>
 	 <div id="X">
 	   <a href="Goa+.html">
 		<img id="h" src="AIS PICS\GOA.png" width="110%" height="80%" style="border-radius:20px; ">
-		<strong><h5> GOA / गोवा  </h5></strong></a>
+		<strong><h5 class="notranslate"> GOA /</h5><h5 id="translateThisSection">गोवा  </h5></strong></a>
      </div>
       <div id="X">
 	   <a href="https://mhasiemmalik.github.io/GujaratMain/">
 		<img id="h" src="AIS PICS\GUJARAT.png" width="100%" height="80%" style="border-radius:20px; ">
-		<strong><h5> GUJARAT / गुजरात</h5></strong></a>
+		<strong><h5 class="notranslate"> GUJARAT /</h5><h5 id="translateThisSection">गुजरात</h5></strong></a>
      </div>
       <div id="X">
 	   <a href="file:///D:/JOGULAMBA GADWAL.html">
 		<img id="h" src="AIS PICS\HARYANA.png " width="100%" height="80%" style="border-radius:20px; ">
-		<strong><h5> HARYANA / हरयाणा </h5></strong></a>
+		<strong><h5 class="notranslate"> HARYANA /</h5><h5 id="translateThisSection">हरयाणा </h5></strong></a>
      </div>
 	 <div id="X">
 	   <a href="file:///D:/KAMAREDDY.html">
 		<img id="h" src="AIS PICS\HIMACHAL PRADESH.png" width="115%" height="80%" style="border-radius:20px; ">
-		<strong><h5> HIMACHAL PRADESH / हिमाचल प्रदेश  </h5></strong></a>
+		<strong><h5 class="notranslate"> HIMACHAL PRADESH /</h5><h5 id="translateThisSection">हिमाचल प्रदेश  </h5></strong></a>
      </div>
 	 <div id="X">
 	   <a href="file:///D:/KARIMNAGAR.html">
 		<img id="h" src="AIS PICS\JHARKHAND.png" width="100%" height="80%" style="border-radius:20px; ">
-		<strong><h5> JHARKHAND / झारखंड  </h5></strong></a>
+		<strong><h5 class="notranslate"> JHARKHAND /</h5><h5 id="translateThisSection">झारखंड  </h5></strong></a>
      </div>
 	 <div id="X">
 	   <a href="file:///D:/KHAMMAM.html">
 		<img id="h" src="AIS PICS\KARNATAKA.png" width="100%" height="80%" style="border-radius:20px; ">
-		<strong><h5> KARNATAKA / कर्नाटक </h5></strong></a>
+		<strong><h5 class="notranslate"> KARNATAKA /</h5><h5 id="translateThisSection">कर्नाटक </h5></strong></a>
      </div>
 	 <div id="X">
 	   <a href="file:///D:/KOMARAMBHEEM.html">
 		<img id="h" src="AIS PICS\KERALA.png" width="110%" height="80%" style="border-radius:20px; ">
-		<strong><h5> KERALA / केरल</h5></strong></a>
+		<strong><h5 class="notranslate"> KERALA /</h5><h5 id="translateThisSection">केरल</h5></strong></a>
      </div>
 	 <div id="X">
 	   <a href="file:///D:/MAHABUBABAD.html">
 		<img id="h" src="AIS PICS\MADHYA PRADESH.jpg" width="100%" height="80%" style="border-radius:20px; ">
-		<strong><h5> MADHYA PRADESH / मध्य प्रदेश  </h5></strong></a>
+		<strong><h5 class="notranslate"> MADHYA PRADESH /</h5><h5 id="translateThisSection">मध्य प्रदेश  </h5></strong></a>
      </div>
 	 <div id="X">
 	   <a href="file:///D:/MAHABUBNAGAR.html">
 		<img id="h" src="AIS PICS\MAHARASHTRA.png" width="100%" height="80%" style="border-radius:20px; ">
-		<strong><h5> MAHARASHTRA / महाराष्ट्र </h5></strong></a>
+		<strong><h5 class="notranslate"> MAHARASHTRA /</h5><h5 id="translateThisSection">महाराष्ट्र </h5></strong></a>
      </div>
 	 <div id="X">
 	   <a href="https://mhasiemmalik.github.io/manipurmain/">
 		<img id="h" src="AIS PICS\MANIPUR.jpg" width="100%" height="80%" style="border-radius:20px; ">
-		<strong><h5> MANIPUR / मणिपुर </h5></strong></a>
+		<strong><h5 class="notranslate"> MANIPUR /</h5><h5 id="translateThisSection">मणिपुर </h5></strong></a>
      </div>
 	 <div id="X">
 	   <a href="https://mhasiemmalik.github.io/meghalayamain/">
 		<img id="h" src="AIS PICS\MEGHALAYA.png" width="110%" height="80%" style="border-radius:20px; ">
-		<strong><h5> MEGHALAYA / मेघालय </h5></strong></a>
+		<strong><h5 class="notranslate"> MEGHALAYA /</h5><h5 id="translateThisSection">मेघालय </h5></strong></a>
      </div>
 	 <div id="X">
 	   <a href="file:///D:/MEDCHAL.html">
 		<img id="h" src="AIS PICS\MIZORAM.jpg" width="100%" height="80%" style="border-radius:20px; ">
-		<strong><h5> MIZORAM / मिजोरम</h5></strong></a>
+		<strong><h5 class="notranslate"> MIZORAM /</h5><h5 id="translateThisSection">मिजोरम</h5></strong></a>
      </div>
 	 <div id="X">
 	   <a href="file:///D:/MULUG.html">
 		<img id="h" src="AIS PICS\NAGALAND.png" width="100%" height="80%" style="border-radius:20px; ">
-		<strong><h5> NAGALAND / नगालैंड </h5></strong></a>
+		<strong><h5 class="notranslate"> NAGALAND /</h5><h5 id="translateThisSection">नगालैंड </h5></strong></a>
      </div>
 	 <div id="X">
 	   <a href="file:///D:/NAGARKURNOOL.html">
 		<img id="h" src="AIS PICS\ODISHA.jpg" width="100%" height="80%" style="border-radius:20px; ">
-		<strong><h5> ODISHA / ओडिशा </h5></strong></a>
+		<strong><h5 class="notranslate"> ODISHA /</h5><h5 id="translateThisSection">ओडिशा </h5></strong></a>
      </div>
 	 <div id="X">
 	   <a href="https://mhasiemmalik.github.io/punjabmain/">
 		<img id="h" src="AIS PICS\PUNJAB.jpg" width="100%" height="80%" style="border-radius:20px; ">
-		<strong><h5> PUNJAB / पंजाब </h5></strong></a>
+		<strong><h5 class="notranslate"> PUNJAB /</h5><h5 id="translateThisSection">पंजाब </h5></strong></a>
      </div>
 	 <div id="X">
 	   <a href="https://mhasiemmalik.github.io/RajasthanMain/">
 		<img id="h" src="AIS PICS\RAJASTHAN.jpg" width="105%" height="80%" style="border-radius:20px; ">
-		<strong><h5> RAJASTHAN / राजस्थान </h5></strong></a>
+		<strong><h5 class="notranslate"> RAJASTHAN /</h5><h5 id="translateThisSection">राजस्थान </h5></strong></a>
      </div>
 	 <div id="X">
 	   <a href="file:///D:/NIRMAL.html">
 		<img id="h" src="AIS PICS\SIKKIM.png" width="100%" height="80%" style="border-radius:20px; ">
-		<strong><h5> SIKKIM / सिक्किम </h5></strong></a>
+		<strong><h5 class="notranslate"> SIKKIM /</h5><h5 id="translateThisSection">सिक्किम </h5></strong></a>
      </div>
 	 <div id="X">
 	   <a href="https://mhasiemmalik.github.io/TNstateMain/">
 		<img id="h" src="AIS PICS\TAMIL NADU.png" width="100%" height="80%" style="border-radius:20px; ">
-		<strong><h5> TAMIL NADU / तमिलनाडु </h5></strong></a>
+		<strong><h5 class="notranslate"> TAMIL NADU /</h5><h5 id="translateThisSection">तमिलनाडु </h5></strong></a>
      </div>
 	 <div id="X">
 	   <a href="https://mhasiemmalik.github.io/FarmPlusRepoTelangana/">
 		<img id="h" src="AIS PICS\TELANGANA.jpeg" width="100%" height="80%" style="border-radius:20px; ">
-		<strong><h5> TELANGANA / तेलंगाना </h5></strong></a>
+		<strong><h5 class="notranslate"> TELANGANA /</h5><h5 id="translateThisSection">तेलंगाना </h5></strong></a>
      </div>
 	 <div id="X">
 	   <a href="file:///D:/RAJANNA SIRCILLA.html">
 		<img id="h" src="AIS PICS\TRIPURA.png" width="100%" height="80%" style="border-radius:20px; ">
-		<strong><h5> TRIPURA / त्रिपुरा</h5></strong></a>
+		<strong><h5 class="notranslate"> TRIPURA /</h5><h5 id="translateThisSection">त्रिपुरा</h5></strong></a>
      </div>
 	 <div id="X">
 	   <a href="file:///D:/RANGAREDDY.html">
 		<img id="h" src="AIS PICS\UTTARAKHAND.jpg" width="100%" height="80%" style="border-radius:20px; ">
-		<strong><h5> UTTARAKHAND / उत्तराखंड </h5></strong></a>
+		<strong><h5 class="notranslate"> UTTARAKHAND /</h5><h5 id="translateThisSection">उत्तराखंड </h5></strong></a>
      </div>
 	 <div id="X">
 	   <a href="https://mhasiemmalik.github.io/UpStateMain/">
 		<img id="h" src="AIS PICS\UTTAR PRADESH.png" width="100%" height="80%" style="border-radius:20px; ">
-		<strong><h5> UTTAR PRADESH / उत्तर प्रदेश </h5></strong></a>
+		<strong><h5 class="notranslate"> UTTAR PRADESH /</h5><h5 id="translateThisSection">उत्तर प्रदेश </h5></strong></a>
      </div>
 	 <div id="X">
 	   <a href="WEST BENGAL\WB WP\WestBengal+.html">
 		<img id="h" src="AIS PICS\WEST BENGAL.png" width="105%" height="80%" style="border-radius:20px; ">
-		<strong><h5> WEST BENGAL / पश्चिम बंगाल </h5></strong></a>
+		<strong><h5 class="notranslate"> WEST BENGAL /</h5><h5 id="translateThisSection">पश्चिम बंगाल </h5></strong></a>
      </div>
 	 <div id="X">
 	   <a href="file:///D:/SIDDIPET.html">
 		<img id="h" src="AIS PICS\DELHI.png" width="100%" height="80%" style="border-radius:20px; ">
-		<strong><h5> DELHI / दिल्ली </h5></strong></a>
+		<strong><h5 class="notranslate"> DELHI /</h5><h5 id="translateThisSection">दिल्ली </h5></strong></a>
      </div>
 	 <div id="X">
 	   <a href="file:///D:/SURYAPET.html">
 		<img id="h" src="AIS PICS/JAMMU,KASHMIR _ LADAKH.png" width="100%" height="80%" style="border-radius:20px; ">
-		<strong><h5> JAMMU,KASHMIR & LADAKH / जम्मू, कश्मीर और लद्दाख</h5></strong></a>
+		<strong><h5 class="notranslate"> JAMMU,KASHMIR & LADAKH /</h5><h5 id="translateThisSection">जम्मू, कश्मीर और लद्दाख</h5></strong></a>
      </div>
 	 <div id="X">
 	   <a href="file:///D:/SURYAPET.html">
 		<img id="h" src="AIS PICS/DADRA, DAMAN _ DIU.png" width="100%" height="80%" style="border-radius:20px; ">
-		<strong><h5> DADRA, DAMAN & DIU / दादरा, दमन & दिउ</h5></strong></a>
+		<strong><h5 class="notranslate"> DADRA, DAMAN & DIU /</h5><h5 id="translateThisSection">दादरा, दमन & दिउ</h5></strong></a>
      </div>
 	 <div id="X">
 	   <a href="file:///D:/SURYAPET.html">
 		<img id="h" src="AIS PICS/ANDAMAN _ NICOBAR.png" width="100%" height="80%" style="border-radius:20px; ">
-		<strong><h5> ANDAMAN & NICOBAR / अण्डमान और निकोबार </h5></strong></a>
+		<strong><h5 class="notranslate"> ANDAMAN & NICOBAR /</h5><h5 id="translateThisSection">अण्डमान और निकोबार </h5></strong></a>
      </div>
 	 <div id="X">
 	   <a href="file:///D:/VIKARABAD.html">
 		<img id="h" src="AIS PICS\LAKSHADWEEP.png" width="100%" height="80%" style="border-radius:20px; ">
-		<strong><h5> LAKSHADWEEP / लक्षद्वीप </h5></strong></a>
+		<strong><h5 class="notranslate"> LAKSHADWEEP /</h5><h5 id="translateThisSection">लक्षद्वीप </h5></strong></a>
      </div>
 </div>	<br><br><br><br>
 <footer>
 	<div class="content">
-		<h1>About:</h1>
-		<p>some text</p>
-		<h1>Contents:</h1>
-		<p>some text</p>
+		<div class="container">
+			<h1>Contents :</h1>
+			<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+				<div class="col">
+					<div class="card h-100 shadow-sm">
+						<img src="TP CP PICS/cottonfarm2.jpg" alt="Crop Management" class="card-image">
+						<div class="card-body">
+							<h5 class="card-title">Crop Management</h5>
+							<p class="card-text">
+								explains crop types and growing mechanisms tailored to geographical differences:
+								<ol>
+									<li>highlights regional crop practices.</li>
+									<li>focuses on Nutritional and general properties of crops.</li>
+									<li>Gives insights on its market value and demand Across the country.</li>
+								</ol>
+							</p>
+						</div>
+					</div>
+				</div>
+	
+				<div class="col">
+					<div class="card h-100 shadow-sm">
+						<img src="TP CP PICS/PETUNIAFARMER.jpg" alt="Horticulture" class="card-image">
+						<div class="card-body">
+							<h5 class="card-title">Horticulture</h5>
+							<p class="card-text">
+								focuses on the types and growth processes of horticultural crops:
+								<ol>
+									<li>includes fruits, flowers, vegetables, spices And cash crops.</li>
+									<li>Growing mechanism from seed selection to harvesting.</li>
+									<li>Linguistic support with 200+ languages with google translate api.</li>
+								</ol>
+							</p>
+						</div>
+					</div>
+				</div>
+	
+				<div class="col">
+					<div class="card h-100 shadow-sm">
+						<img src="TP CP PICS/farmabc1.jpg" alt="Weather Tracking" class="card-image">
+						<div class="card-body">
+							<h5 class="card-title">Weather Tracking</h5>
+							<p class="card-text">
+								provides real-time weather updates and alerts:
+								<ol>
+									<li>Helps in tracking cyclones in real-time, Using weather mapping facilities.</li>
+									<li>offers hourly weather updates for Consecutive 7 days.</li>
+									<li>keeps farmers Updated with News and Timely alerts.</li>
+								</ol>
+							</p>
+						</div>
+					</div>
+				</div>
+	
+				<div class="col">
+					<div class="card h-100 shadow-sm">
+						<img src="TP CP PICS/SUNFLOWERFARMSEEDS.jpg" alt="Resource Calculation" class="card-image">
+						<div class="card-body">
+							<h5 class="card-title">Resource Calculation</h5>
+							<p class="card-text">
+								includes tools for efficient resource use:
+								<ol>
+									<li>resource forecasting: water, Seeds, time, fertilizers and area needs.</li>
+									<li>market price prediction and comparison tools.</li>
+									<li>crop recommendations based on location, seasons, and soil rotation.</li>
+								</ol>
+							</p>
+						</div>
+					</div>
+				</div>
+	
+				<div class="col">
+					<div class="card h-100 shadow-sm">
+						<img src="TP CP PICS/maizfarmerbuy4.jpg" alt="Markets" class="card-image">
+						<div class="card-body">
+							<h5 class="card-title">Markets</h5>
+							<p class="card-text">
+								features tools for connecting farmers and buyers:
+								<ol>
+									<li>marketplace for selling and buying produce Securely across the country.</li>
+									<li>locates nearby cold storages and markets.</li>
+									<li>crisis call support for All types of emergencies.</li>
+								</ol>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
         <h1>Creators:</h1>
 		<div class="team-container">
 			<!-- Team members -->
@@ -669,11 +869,11 @@
 				<h4 style="font-family: 'Montagu Slab', sans-serif;"> TEAM LEAD </h4>
 				<div id="teamp">
 					<h6> 
-						Designer of what ever you are seeing right now ! 
+						Designer of what ever you are seeing right now! 
 						Complete Implementation of 'Project Designing, Deployment, Coding, and Testing' of Both Front-End 
-						and Back-End of the project. and all the modules like Weather, Marketplace etc was taken care. 
+						and Back-End of the project including all the modules like Weather, Marketplace. 
 						Led the Entire Team to work on specific modules of the Project
-						respectively.
+						collaboratively and efficiently.
 					</h6>            
 				</div>
 				<br><br>
@@ -699,9 +899,7 @@
 				<h4> Research & Development </h4>
 				<div id="teamp">
 					<h6>
-						Research on Resourse requirement and allocation for the horticulture 
-						based on soil type,quantity and quality of production and growing mechanism.
-						Designing and Development of the UI and JavaScript for calculations , types and growing mechanism pages.
+						Research on resource requirements and Allocation for horticulture based on soil type, quantity and quality of production, and growing mechanisms. Designed and developed the User Interface (UI) and implemented JavaScript for calculations, crop types, and growing mechanism pages.
 					</h6>	
 			    </div><br>
 				<div class="Socials">
@@ -726,10 +924,9 @@
 				<h5>Mohd Asif Ahmed</h5>
 				<h4> Research & Development </h4>
 				<div id="teamp">
-					<h6>Research on seasonal growth of crops & horticulture Like spices, pulses, cereals, oil seeds, vegetables etc along with market 
-						share on district and state level , developed types and growing mechanism pages  of spices.
+					<h6>Development and research of seasonal growth of crops with their market share at district and state levels along with crop types and growing mechanisms of spices. Integrated price prediction and comparison tools using machine learning models and historical data to provide accurate market insights.
 					</h6>
-				</div>
+				</div><br>
 				
 				<div class="Socials">
 					<a href="https://wa.me/9133721204" title="WhatsApp" target="_blank">
@@ -752,12 +949,10 @@
 				<h5>Pandhiri Ajay Reddy</h5>
 				<h4> Research & Development </h4>
 				<div id="teamp">
-					<h6>Research on Types of crops like Fruits and other horticulture Like flowers,
-						vegetables and their soil types,water requirements etc along with market 
-						share on district and state level,and growing mechanism of fruits along 
-						with translations and audio facilities
+					<h6>Research on horticulture especially fruits and flowers, Analyzed their market share at district and state levels to provide valuable insights. Designed and developed crop recommendation tools integrated with translation and audio facilities to enhance accessibility and usability for diverse user groups.
+
 					</h6>
-				</div>	
+				</div><br><br>	
 				<div class="Socials">
 					<a href="https://wa.me/7013928957" title="WhatsApp" target="_blank">
 						<i class="fab fa-whatsapp"></i>
@@ -775,10 +970,28 @@
 			</div>
 		</div>
 
-		<div>
-			<h1>Research Papers</h1>
-			<a href="xxx">Link to Research Papers</a>
+		<h1>Research Papers</h1>
+		<div class="col">
+			<div class="card h-100 shadow-sm">
+				<img src="TP CP PICS/PETUNIABLUE.jpg" alt="Markets" class="card-image">
+				<div class="card-body">
+					<p class="card-text">
+						Access a curated collection of research papers that delve into advanced insights of shaping the Agriculture and the Application you're seeing right now.
+						<ol>
+							<li>Farm Innovation: An Agricultural Support Platform Designed To Assist Farmers Across India</li>
+							<li>Farm Innovation: Empowering Farmers With A Secure Marketplace For Seamless Crop Listing and Bidding Of Agricultural Produce Across The Country.</li>
+							<li>Farm Innovation: Developing Price Prediction And Crop Recommendation Tools To Guide Farmers in India</li>				
+						</ol>
+					</p>
+					<a href="https://drive.google.com/drive/folders/1jG2My6-kHJ107pkjKUarWgDj6GgefEfj?usp=sharing">
+						<button id="B2">Access Research Papers</button>
+					</a>
+				</div>
+			</div>
 		</div>
+		
+		
+		
 	</div>
 </footer>
 
