@@ -66,9 +66,8 @@
 		  }
 		  #e{
 			   float:right;
-			   padding-right:50px;
-			   padding-top:10px;
-			
+			   margin-right: 3%;
+			   margin-top: 2%;
 		  }
 		  
 	  body{
@@ -213,14 +212,8 @@
 		   padding-left:0px;
 	   }
 	   #e{
-				display:grid;
-				grid-template-columns:auto auto auto auto ;
-				grid-gap:10px;
-				width:45%;
-				margin:auto;
-				float:left;
-			   padding-left:15px;
-			   padding-top:10px;
+				
+				float:right;
 			   
 		   }
 		   .team-container {
@@ -242,7 +235,7 @@
 	   }
 	   #tpic{
 		   height: 500px;
-		   max-width: 500px;
+		   max-width: 100%;
 	   }
 	   h6{
 		   font-size: 15px;
@@ -265,8 +258,8 @@
 		   
 	   }
 	   #tpic{
-		   height: 350px;
-		   max-width: 350px;
+		   height: 100%;
+		   max-width: 100%;
 	   }
 	  
 	   #teamp{
@@ -290,7 +283,7 @@
 
 	   #tpic{
 		   height: 350px;
-		   max-width: 350px;
+		   max-width: 100%;
 	   }
 	   h6{
 		   font-size: 15px;
@@ -317,7 +310,7 @@
 
 	   #tpic{
 		   height: 280px;
-		   max-width: 280px;
+		   max-width: 100%;
 	   }
 	   h6{
 		   font-size: 15px;
@@ -362,7 +355,7 @@
 
 	   #tpic {
 		   height: 400px;
-		   max-width: 400px;
+		   max-width:100%;
 		   border-radius: 20px;
 		   
 	   }
@@ -370,18 +363,6 @@
 	   #teamp{
 		   width: auto;
 	   }
-
-	   #e{
-				display:grid;
-				grid-template-columns:auto auto auto auto ;
-				grid-gap:2px;
-				width:20%;
-				margin:auto;
-				float:left;
-			   padding-left:15px;
-			   padding-top:10px;
-			   
-		   }
 
 	   #topbtns{
 		   width: 50%;
@@ -538,17 +519,13 @@
 		 border-left:15px ridge orange; 
 		 border-bottom:10px ridge orange;
 		 border-right:10px ridge orange;"/>         
-		 <div id="topbtns">
-
-		 </div>         
-		 <!--IMG SRC="C:\backg pic\tastfarm.png" width="67%" height="150px" /> 
+		      
+		 <!--IMG SRC="C:\backg pic\tastfarm.png" width="67%" height="150px" /--> 
 		<DIV id="topbtns">
-		  <div id="e" style="background-color:#006600;" >
-		    <button class="btn btn-outline-warning"  onclick="alert('WATER BUTTON CLICKED')">ABOUT </button> &nbsp;
-	      <button class="btn btn-outline-warning"  onclick="alert('FERTILIZERS BUTTON CLICKED')">M.D.I</button>  &nbsp;
-	      <button class="btn btn-outline-warning" onclick="alert('YEILD BUTTON CLICKED')">CRISIS CALL</button> &nbsp;
-	      <button class="btn btn-outline-warning"  onclick="alert('PROFIT BUTTON CLICKED')">OTHER</button></center>  <br>        
-		 </DIV-->
+		  <div>
+	      <a id="e" href="#video-container" class="btn btn-outline-warning"  >ABOUT</a>  &nbsp;
+	      </div>        
+		 </DIV>
     </DIV>
 	
   </div>
@@ -862,8 +839,24 @@
 				</div>
 			</div>
 		</div>
+
+		<div style="background-color: black; color: white; text-align: center; padding: 20px;">
+			<div id="video-container" style="max-width: 1200px; margin: 0 auto;">
+				<h1>Tutorial</h1>
+				<iframe 
+					id="youtube-video" 
+					width="100%" 
+					height="450" 
+					src="https://www.youtube.com/embed/0ld7KfPRrUA?rel=0&autoplay=0&controls=1&modestbranding=1&enablejsapi=1" 
+					title="YouTube video player" 
+					frameborder="0" 
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+					allowfullscreen>
+				</iframe>
+			</div>
+		</div>
         <h1>Creators:</h1>
-		<div class="team-container">
+		<div id="Team" class="team-container">
 			<!-- Team members -->
 			<div class="team">
 				<img id="tpic" src="AIS PICS/Malik 6.jpg" alt="Malik"  height="350px"/>
@@ -896,7 +889,7 @@
 			</div>
 
 			<div class="team">
-				<img id="tpic" src="AIS PICS/Vamshi .jpg" alt="Vamshi"  height="350px" />
+				<img id="tpic" src="AIS PICS/Vamshi .jpg" alt="Vamshi"  height="350px"/>
 				<h5>Artham Vamshi</h5>
 				<h4> Research & Development </h4>
 				<div id="teamp">
@@ -1035,7 +1028,30 @@
 	}, 1000);
 </script>
 
+<script>
+    // Adjust YouTube video speed after the iframe API is ready
+    const playerReady = () => {
+        const player = new YT.Player('youtube-video', {
+            events: {
+                onReady: (event) => {
+                    event.target.setPlaybackRate(0.75); // Set playback speed to 0.75x
+                }
+            }
+        });
+    };
 
+    // Load the YouTube IFrame API
+    const loadYoutubeAPI = () => {
+        const tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        const firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    };
+
+    // Initialize the YouTube API when the script loads
+    loadYoutubeAPI();
+    window.onYouTubeIframeAPIReady = playerReady;
+</script>
        
 	   <!--
 
